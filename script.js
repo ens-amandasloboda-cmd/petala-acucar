@@ -72,3 +72,17 @@ function verFramboesa(){
         informacoes.innerHTML = '';
     }
 }
+let carrinho = [];
+
+function adicionarAoCarrinho(nomeBolo, preco) {
+    carrinho.push({ nome: nomeBolo, preco: preco });
+    atualizarContadorCarrinho();
+    alert(`${nomeBolo} adicionado ao carrinho!`);
+}
+
+function atualizarContadorCarrinho() {
+    const linkCarrinho = document.querySelector('.menu-link[href="#"]');
+    if (linkCarrinho) {
+        linkCarrinho.textContent = `Carrinho (${carrinho.length})`;
+    }
+}
